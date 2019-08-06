@@ -16,13 +16,14 @@ type Claims interface {
 // https://tools.ietf.org/html/rfc7519#section-4.1
 // See examples for how to use this with your own claim types
 type StandardClaims struct {
-	Audience  string `json:"aud,omitempty"`
-	ExpiresAt int64  `json:"exp,omitempty"`
-	Id        string `json:"jti,omitempty"`
-	IssuedAt  int64  `json:"iat,omitempty"`
-	Issuer    string `json:"iss,omitempty"`
-	NotBefore int64  `json:"nbf,omitempty"`
-	Subject   string `json:"sub,omitempty"`
+	Audience       string   `json:"aud,omitempty"`
+	AudienceArray  []string `json:"aud,omitempty"`
+	ExpiresAt      int64    `json:"exp,omitempty"`
+	Id             string   `json:"jti,omitempty"`
+	IssuedAt       int64    `json:"iat,omitempty"`
+	Issuer         string   `json:"iss,omitempty"`
+	NotBefore      int64    `json:"nbf,omitempty"`
+	Subject        string   `json:"sub,omitempty"`
 }
 
 // Validates time based claims "exp, iat, nbf".
